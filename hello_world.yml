@@ -3,5 +3,5 @@
   tasks:
     - name: Test Message
       debug:
-        msg: "{{ text_aria_box_json_string.host1 }}"
+        msg: "{{ text_area_box_json_string.host1 }}"
 
