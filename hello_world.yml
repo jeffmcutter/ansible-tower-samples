@@ -1,7 +1,7 @@
 - name: Hello World Sample
   hosts: all
   tasks:
-    - name: Hello Message
+    - name: Test Message
       debug:
-        msg: "Hello World!"
+        msg: "{{ text_aria_box_json_string.host1 }}"
 
