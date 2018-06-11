@@ -1,0 +1,10 @@
+- name: Hello World Sample
+  hosts: all
+  tasks:
+    - name: Setting Facts
+      set_fact:
+        my_json: "{{ my_json_string | from_json }}"
+    - name: Print Item
+      debug:
+        msg: "{{ my_json }}"
+      with_items: "{{ my_json }}"
