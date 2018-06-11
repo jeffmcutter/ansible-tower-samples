@@ -2,7 +2,8 @@
   hosts: all
   tasks:
     - name: Setting Facts
-      set_fact: text_area_box: "{{ hello_world | from_json }}"
+      set_fact:
+        text_area_box: "{{ hello_world | from_json }}"
     - name: Print host1.
       debug:
         msg: "{{ text_area_box.host1 }}"
