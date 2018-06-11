@@ -1,7 +1,12 @@
 - name: Hello World Sample
   hosts: all
   tasks:
-    - name: Test Message
+    - name: Setting Facts
+      set_fact: text_area_box: "{{ hello_world | from_json }}"
+    - name: Print host1.
       debug:
-        msg: "{{ text_area_box_json_string }}"
+        msg: "{{ text_area_box.host1 }}"
+    - name: Print host1 ip.
+      debug:
+        msg: "{{ text_area_box.host1.ip }}"
 
