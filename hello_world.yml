@@ -4,10 +4,16 @@
     - name: Setting Facts
       set_fact:
         text_area_box: "{{ text_area_box_json_string | from_json }}"
+    - name: Print text_area_box.
+      debug:
+        msg: "{{ text_area_box }}"
     - name: Print host1.
       debug:
         msg: "{{ text_area_box.host1 }}"
     - name: Print host1 ip.
       debug:
         msg: "{{ text_area_box.host1.ip }}"
+    - name: Print host1 port.
+      debug:
+        msg: "{{ text_area_box.host1.port }}"
 
