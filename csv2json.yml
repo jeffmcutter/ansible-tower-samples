@@ -4,7 +4,19 @@
     - name: Setting Facts
       set_fact:
         my_json: "{{ my_json_string | from_json }}"
-    - name: Print Item
+    - name: Print items
       debug:
         msg: "{{ my_json }}"
+      with_items: "{{ my_json }}"
+    - name: Print names
+      debug:
+        msg: "{{ my_json.name }}"
+      with_items: "{{ my_json }}"
+    - name: Print ips
+      debug:
+        msg: "{{ my_json.ip }}"
+      with_items: "{{ my_json }}"
+    - name: Print ports
+      debug:
+        msg: "{{ my_json.port }}"
       with_items: "{{ my_json }}"
