@@ -6,17 +6,17 @@
         my_json: "{{ my_json_string | from_json }}"
     - name: Print items
       debug:
-        msg: "{{ my_json }}"
+        msg: "{{ item }}"
       with_items: "{{ my_json }}"
     - name: Print names
       debug:
-        msg: "{{ my_json.name }}"
+        msg: "{{ item.name }}"
       with_items: "{{ my_json }}"
     - name: Print ips
       debug:
-        msg: "{{ my_json.ip }}"
+        msg: "{{ item.ip }}"
       with_items: "{{ my_json }}"
     - name: Print ports
       debug:
-        msg: "{{ my_json.port }}"
+        msg: "{{ item.port }}"
       with_items: "{{ my_json }}"
