@@ -1,9 +1,12 @@
 - name: Hello World Sample
   hosts: all
   tasks:
+
     - name: Setting Facts
       set_fact:
         my_yaml: "{{ my_yaml_string | from_yaml }}"
+        my_yaml2: "{{ my_yaml_string2 | from_yaml }}"
+
     - name: Print items
       debug:
         msg: "{{ item }}"
@@ -20,3 +23,20 @@
       debug:
         msg: "{{ item.port }}"
       with_items: "{{ my_yaml }}"
+
+    - name: Print items 2
+      debug:
+        msg: "{{ item }}"
+      with_items: "{{ my_yaml2 }}"
+    - name: Print names 2
+      debug:
+        msg: "{{ item.name }}"
+      with_items: "{{ my_yaml2 }}"
+    - name: Print ips 2
+      debug:
+        msg: "{{ item.ip }}"
+      with_items: "{{ my_yaml2 }}"
+    - name: Print ports 2
+      debug:
+        msg: "{{ item.port }}"
+      with_items: "{{ my_yaml2 }}"
