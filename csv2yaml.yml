@@ -40,3 +40,7 @@
       debug:
         msg: "{{ item.port }}"
       with_items: "{{ my_yaml2 }}"
+    - name: Print groups 2
+      debug:
+        msg: "{{ item.group }}"
+      with_items: "{{ my_yaml2 }}"
